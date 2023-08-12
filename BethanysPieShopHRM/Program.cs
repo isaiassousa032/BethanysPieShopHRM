@@ -9,7 +9,10 @@ Employee bethany = new("Bethany", "Smith", "bethany@snowball.be", new DateTime(1
 Console.WriteLine("\nCreating an Employee");
 Console.WriteLine("--------------------\n");
 
-Employee george = new("George", "Jones", "george@snowball.be", new DateTime(1984, 3, 28), 30, EmployeeType.Research);
+Employee george = new("George", "Jones", "george@snowball.be", new DateTime(1984, 3, 28), null, EmployeeType.Research);
+
+Employee mysteryEmployee = null;
+mysteryEmployee.DisplayEmployeeDetails();
 
 #region First run Bethany
 
