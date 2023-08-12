@@ -35,23 +35,23 @@ namespace BethanysPieShopHRM
 
         public void PerformWork()
         {
-            PerformWork(minimalHoursWorkedUnit); //refatoração de código 
+            PerformWork(minimalHoursWorkedUnit);
         }
 
         public void PerformWork(int numberOfHours)
         {
             NumberOfHoursWorked += numberOfHours;
 
-            Console.WriteLine($"{FirstName} {LastName} has worked for {NumberOfHoursWorked} hour(s)");
+            Console.WriteLine($"{FirstName} {LastName} has worked for {numberOfHours} hour(s)");
         }
 
-        public double ReceiveWage(bool reserHours = true)
+        public double ReceiveWage(bool resetHours = true)
         {
             Wage = NumberOfHoursWorked * HourlyRate;
 
             Console.WriteLine($"{FirstName} {LastName} has received a wage of {Wage} for {NumberOfHoursWorked} hours(s) of work");
 
-            if (reserHours)
+            if (resetHours)
                 NumberOfHoursWorked = 0;
             return Wage;
         }
