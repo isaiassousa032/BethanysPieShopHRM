@@ -20,8 +20,30 @@ namespace BethanysPieShopHRM
 
         public void PerformWork()
         {
-            numberOfHoursWorked++;
+            PerformWork(1); //refatoração de código 
+        }
+
+        public void PerformWork(int numberOfHours)
+        {
+            numberOfHoursWorked += numberOfHours;
+
             Console.WriteLine($"{firstName} {lastName} has worked for {numberOfHoursWorked} hour(s)");
+        }
+
+        public double ReceiveWage(bool reserHours = true)
+        {
+            wage = numberOfHoursWorked * hourlyRate;
+
+            Console.WriteLine($"{firstName} {lastName} has received a wage of {wage} for {numberOfHoursWorked} hours(s) of work");
+
+            if (reserHours)
+                numberOfHoursWorked = 0;
+            return wage;
+        }
+
+        public void DisplayEmployeeDetails()
+        {
+            Console.WriteLine($"\nFirst name: \t{firstName}\nLast name: \t{lastName}\nEmail:\t\t{email}\nBirthday: \t{birthday.ToShortDateString()}\n");
         }
     }
 }
