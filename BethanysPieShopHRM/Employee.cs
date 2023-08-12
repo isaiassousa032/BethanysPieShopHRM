@@ -18,6 +18,8 @@ namespace BethanysPieShopHRM
 
         public DateTime birthday { get; set; }
 
+        const int minimalHoursWorkedUnit = 1;
+
         public void PerformWork()
         {
             PerformWork(1); //refatoração de código 
