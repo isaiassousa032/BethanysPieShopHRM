@@ -6,43 +6,56 @@ Console.WriteLine("--------------------\n");
 
 Employee bethany = new("Bethany", "Smith", "bethany@snowball.be", new DateTime(1979, 1, 16), 25, EmployeeType.Manager);
 
-Employee george = new("George", "Jones", "george@snowball.be", new DateTime(1984, 3, 28), 30, EmployeeType.Research);
-
-bethany.DisplayEmployeeDetails();
-bethany.PerformWork();
-bethany.PerformWork();
-bethany.PerformWork(5);
-bethany.PerformWork();
-
-double receivedWageBethany = bethany.ReceiveWage(true);
-Console.WriteLine($"Wage paid (message from Program): {receivedWageBethany}\n");
-
-string bethanyAsJson = bethany.ConvertToJson();
-Console.WriteLine(bethanyAsJson);
-
 Console.WriteLine("\nCreating an Employee");
 Console.WriteLine("--------------------\n");
 
+Employee george = new("George", "Jones", "george@snowball.be", new DateTime(1984, 3, 28), 30, EmployeeType.Research);
+
+#region First run Bethany
+
+bethany.PerformWork();
+bethany.PerformWork(5);
+bethany.PerformWork();
+bethany.ReceiveWage();
+bethany.DisplayEmployeeDetails();
+
+#endregion
+
+#region First run George
+
+george.PerformWork(10);
+george.PerformWork();
+george.PerformWork();
+george.ReceiveWage();
 george.DisplayEmployeeDetails();
+
+#endregion
+
+Employee.taxRate = 0.02;
+
+#region Second run Bethany
+
+bethany.PerformWork();
+bethany.PerformWork();
+bethany.PerformWork();
+bethany.PerformWork();
+bethany.PerformWork();
+bethany.PerformWork();
+bethany.ReceiveWage();
+bethany.DisplayEmployeeDetails();
+
+#endregion
+
+#region Second run George
+
 george.PerformWork();
 george.PerformWork();
-george.PerformWork(3);
 george.PerformWork();
-george.PerformWork(8);
+george.ReceiveWage();
+george.DisplayEmployeeDetails();
 
-var receivedWageGeorge = george.ReceiveWage(true);
+#endregion
 
-Console.WriteLine($"Wage paid (message from Program): {receivedWageGeorge}\n");
-
-WorkTask task;
-task.description = "Bake delicious pies";
-task.hours = 3;
-task.PerformWorkTask();
-
-string georgeAsJson = bethany.ConvertToJson();
-Console.WriteLine(georgeAsJson);
-
- Customer customer = new BethanysPieShopHRM.Accounting.Customer();
-
+Employee.DisplayTaxRate();
 
 
