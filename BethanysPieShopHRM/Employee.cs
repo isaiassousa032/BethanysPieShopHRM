@@ -76,7 +76,15 @@ namespace BethanysPieShopHRM
 
         public double ReceiveWage(bool resetHours = true)
         {
-            Wage = NumberOfHoursWorked * HourlyRate;
+            if (employeeType == EmployeeType.Manager)
+            {
+                Console.WriteLine($"An extra was added to the wage since {FirstName} is a manager!");
+                Wage = NumberOfHoursWorked * HourlyRate * 1.25;
+            }
+            else
+            {
+                Wage = NumberOfHoursWorked * HourlyRate;
+            }
 
             Console.WriteLine($"{FirstName} {LastName} has received a wage of {Wage} for {NumberOfHoursWorked} hours(s) of work");
 

@@ -3,14 +3,18 @@
 Console.WriteLine("Creating an Employee");
 Console.WriteLine("--------------------\n");
 
-Employee bethany = new("Bethany", "Smith", "bethany@snowball.be", new DateTime(1979, 1, 16), 25);
+Employee bethany = new("Bethany", "Smith", "bethany@snowball.be", new DateTime(1979, 1, 16), 25, EmployeeType.Manager);
+Employee george = new("George", "Jones", "george@snowball.be", new DateTime(1984, 3, 28), 30, EmployeeType.Research);
+
+Console.WriteLine("\nCreating an Employee");
+Console.WriteLine("--------------------\n");
 
 bethany.DisplayEmployeeDetails();
 bethany.PerformWork();
 bethany.PerformWork();
 bethany.PerformWork(5);
 bethany.PerformWork();
-bethany.PerformWork(25);
+bethany.PerformWork();
 
 int minimumBonus = 100;
 int bonusTax;
@@ -19,11 +23,6 @@ Console.WriteLine($"The minimum bonus is {minimumBonus}, the bonus tax is {bonus
 
 double receivedWageBethany = bethany.ReceiveWage(true);
 Console.WriteLine($"Wage paid (message from Program): {receivedWageBethany}");
-
-Console.WriteLine("\nCreating an Employee");
-Console.WriteLine("--------------------\n");
-
-Employee george = new("George", "Jones", "george@snowball.be", new DateTime(1984, 3, 28), 30);
 
 george.DisplayEmployeeDetails();
 george.PerformWork();
@@ -37,4 +36,5 @@ Console.WriteLine($"Wage paid (message from Program): {receivedWageGeorge}\n");
 
 string bethanyAsJson = bethany.ConvertToJson();
 Console.WriteLine(bethanyAsJson);
+
 
