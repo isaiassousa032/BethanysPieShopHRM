@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace BethanysPieShopHRM
+namespace BethanysPieShopHRM.HR
 {
     internal class Employee
     {
