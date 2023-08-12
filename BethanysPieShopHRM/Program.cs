@@ -12,25 +12,10 @@ bethany.PerformWork(5);
 bethany.PerformWork();
 bethany.PerformWork(25);
 
-//int minimumBonus = 100;
-//int receivedBonus = bethany.CalculateBonus(minimumBonus);
-//Console.WriteLine($"The minimum bonus is {minimumBonus} and {bethany.FirstName} has received a bonus of {receivedBonus}");
-
 int minimumBonus = 100;
 int bonusTax;
 int receivedBonus = bethany.CalculateBonusAndTax(minimumBonus, out bonusTax);
 Console.WriteLine($"The minimum bonus is {minimumBonus}, the bonus tax is {bonusTax} and {bethany.FirstName} has received a bonus of {receivedBonus}");
-
-//bethany.FirstName = "John";
-//bethany.HourlyRate = 10;
-
-//bethany.DisplayEmployeeDetails();
-//bethany.PerformWork();
-//bethany.PerformWork();
-//bethany.PerformWork(5);
-//bethany.PerformWork();
-
-//string fn = bethany.FirstName;
 
 double receivedWageBethany = bethany.ReceiveWage(true);
 Console.WriteLine($"Wage paid (message from Program): {receivedWageBethany}");
@@ -48,5 +33,8 @@ george.PerformWork();
 george.PerformWork(8);
 
 var receivedWageGeorge = george.ReceiveWage(true);
-Console.WriteLine($"Wage paid (message from Program): {receivedWageGeorge}");
+Console.WriteLine($"Wage paid (message from Program): {receivedWageGeorge}\n");
+
+string bethanyAsJson = bethany.ConvertToJson();
+Console.WriteLine(bethanyAsJson);
 
