@@ -61,4 +61,6 @@ george.DisplayEmployeeDetails();
 
 Employee.DisplayTaxRate();
 
+bethany.CalculateWage();
+
 

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using BethanysPieShopHRM.Logic;
+using Newtonsoft.Json;
 
 namespace BethanysPieShopHRM.HR
 {
@@ -69,6 +70,13 @@ namespace BethanysPieShopHRM.HR
             }
             Console.WriteLine($"The employee got a bonus of {bonus} and the tax on the bonus is {bonusTax}");
             return bonus;
+        }
+
+        public double CalculateWage()
+        {
+            WageCalculations wageCalculations = new WageCalculations();
+            double calculatedValue = wageCalculations.ComplexWageCalculation(Wage, taxRate, 3, 42);
+            return calculatedValue;
         }
 
         public string ConvertToJson()
