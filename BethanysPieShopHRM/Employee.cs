@@ -8,6 +8,10 @@ namespace BethanysPieShopHRM
 {
     internal class Employee
     {
+        public Employee(string first, string last, string em, DateTime bd) : this(first, last, em, bd, 0)
+        {
+        }
+
         public Employee(string first, string last, string em, DateTime bd, double rate)
         {
             FirstName = first;
