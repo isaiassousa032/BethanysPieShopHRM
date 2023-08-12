@@ -54,8 +54,9 @@ namespace BethanysPieShopHRM
             return bonus;
         }
 
-        public int CalculateBonusAndTax(int bonus, ref int bonusTax)
+        public int CalculateBonusAndTax(int bonus, out int bonusTax)
         {
+            bonusTax = 0;
             if (NumberOfHoursWorked > 10)
                 bonus *= 2;
 
