@@ -1,4 +1,5 @@
 ﻿using BethanysPieShopHRM.HR;
+using BethanysPieShopHRM.Accounting;
 
 Console.WriteLine("Creating an Employee");
 Console.WriteLine("--------------------\n");
@@ -41,6 +42,7 @@ task.PerformWorkTask();
 string georgeAsJson = bethany.ConvertToJson();
 Console.WriteLine(georgeAsJson);
 
+ Customer customer = new BethanysPieShopHRM.Accounting.Customer();
 
 
 
