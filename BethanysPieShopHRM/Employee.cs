@@ -4,19 +4,6 @@ namespace BethanysPieShopHRM
 {
     internal class Employee
     {
-        public Employee(string first, string last, string em, DateTime bd) : this(first, last, em, bd, 0)
-        {
-        }
-
-        public Employee(string first, string last, string em, DateTime bd, double rate)
-        {
-            FirstName = first;
-            LastName = last;
-            Email = em;
-            Birthday = bd;
-            HourlyRate = rate;
-        }
-
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -28,6 +15,22 @@ namespace BethanysPieShopHRM
         public DateTime Birthday { get; set; }
 
         const int minimalHoursWorkedUnit = 1;
+
+        public EmployeeType employeeType;
+
+        public Employee(string first, string last, string em, DateTime bd, double rate, EmployeeType empType)
+        {
+            FirstName = first;
+            LastName = last;
+            Email = em;
+            Birthday = bd;
+            HourlyRate = rate;
+            employeeType = empType;
+        }
+        public Employee(string first, string last, string em, DateTime bd) : this(first, last, em, bd, 0, EmployeeType.StoreManager)
+        {
+        }
+
 
         public void PerformWork()
         {
