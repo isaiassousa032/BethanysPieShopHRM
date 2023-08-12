@@ -10,6 +10,16 @@ bethany.PerformWork();
 bethany.PerformWork();
 bethany.PerformWork(5);
 bethany.PerformWork();
+bethany.PerformWork(25);
+
+//int minimumBonus = 100;
+//int receivedBonus = bethany.CalculateBonus(minimumBonus);
+//Console.WriteLine($"The minimum bonus is {minimumBonus} and {bethany.FirstName} has received a bonus of {receivedBonus}");
+
+int minimumBonus = 100;
+int bonusTax = 0;
+int receivedBonus = bethany.CalculateBonusAndTax(minimumBonus, ref bonusTax);
+Console.WriteLine($"The minimum bonus is {minimumBonus}, the bonus tax is {bonusTax} and {bethany.FirstName} has received a bonus of {receivedBonus}");
 
 //bethany.FirstName = "John";
 //bethany.HourlyRate = 10;
