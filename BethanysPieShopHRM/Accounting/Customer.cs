@@ -9,7 +9,7 @@ namespace BethanysPieShopHRM.Accounting
     internal class Customer
     {
         private string _customerId;
-        private string name;
+        private string _name;
 
         public string CustomerId
         {
@@ -18,8 +18,8 @@ namespace BethanysPieShopHRM.Accounting
         }
         public string Name
         {
-            get => name;
-            set => name = value;
+            get => _name;
+            set => _name = value;
         }
 
     }

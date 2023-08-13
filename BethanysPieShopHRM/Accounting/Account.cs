@@ -8,15 +8,12 @@ namespace BethanysPieShopHRM.Accounting
 {
     internal class Account
     {
-        private string accountNumber;
+        private string _accountNumber;
 
         public string AccountNumber
         {
-            get { return accountNumber; }
-            set
-            {
-                accountNumber = value;
-            }
+            get => _accountNumber;
+            set => _accountNumber = value;
         }
 
     }
