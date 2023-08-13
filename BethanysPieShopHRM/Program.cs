@@ -6,7 +6,6 @@ JuniorResearcher bobJunior = new JuniorResearcher("Bob", "Spencer", "bob@snowbal
 IEmployee kevin = new StoreManager("Kevin", "Marks", "kevin@snowball.be", new DateTime(1953, 12, 12), 10);
 IEmployee kate = new StoreManager("Kate", "Greggs", "kate@snowball.be", new DateTime(1993, 8, 8), 10);
 
-
 List<IEmployee> employees = new List<IEmployee>();
 employees.Add(bethany);
 employees.Add(mary);
@@ -16,12 +15,10 @@ employees.Add(kate);
 
 foreach (var employee in employees)
 {
-    
-    employee.DisplayEmployeeDetails();
-    employee.GiveBonus();
-    employee.GiveCompliment();
     employee.PerformWork();
     employee.ReceiveWage();
+    employee.DisplayEmployeeDetails();
+    employee.GiveBonus();
 }
 
-//Console.ReadLine();
+Console.ReadLine();
