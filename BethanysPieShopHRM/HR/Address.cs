@@ -8,10 +8,10 @@ namespace BethanysPieShopHRM.HR
 {
     public class Address
     {
-        private string street;
-        private string houseNumber;
-        private string zipCode;
-        private string city;
+        private string _street;
+        private string _houseNumber;
+        private string _zipCode;
+        private string _city;
 
         public Address(string street, string houseNumber, string zipCode, string city)
         {
@@ -23,38 +23,23 @@ namespace BethanysPieShopHRM.HR
 
         public string Street
         {
-            get { return street; }
-            set
-            {
-                street = value;
-            }
+            get => _street;
+            set => _street = value;
         }
         public string HouseNumber
         {
-            get { return houseNumber; }
-            set
-            {
-                houseNumber = value;
-            }
+            get => _houseNumber;
+            set => _houseNumber = value;
         }
         public string ZipCode
         {
-            get { return zipCode; }
-            set
-            {
-                zipCode = value;
-            }
+            get => _zipCode;
+            set => _zipCode = value;
         }
         public string City
         {
-            get
-            {
-                return city;
-            }
-            set
-            {
-                city = value;
-            }
+            get => _city;
+            set => _city = value;
         }
     }
 }

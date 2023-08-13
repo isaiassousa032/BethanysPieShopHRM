@@ -13,17 +13,11 @@ namespace BethanysPieShopHRM.HR
         {
         }
 
-        private int numberOfPieTastesInvented = 0;
+        private int _numberOfPieTastesInvented = 0;
         public int NumberOfPieTastesInvented
         {
-            get
-            {
-                return numberOfPieTastesInvented;
-            }
-            private set
-            {
-                numberOfPieTastesInvented = value;
-            }
+            get => _numberOfPieTastesInvented;
+            private set => _numberOfPieTastesInvented = value;
         }
 
         public void ResearchNewPieTastes(int researchHours)

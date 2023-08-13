@@ -5,78 +5,63 @@ namespace BethanysPieShopHRM.HR
 {
     public class Employee : IEmployee
     {
-        private string firstName;
-        private string lastName;
-        private string email;
+        private string _firstName;
+        private string _lastName;
+        private string _email;
 
-        private int numberOfHoursWorked;
-        private double wage;
-        private double? hourlyRate;
+        private int _numberOfHoursWorked;
+        private double _wage;
+        private double? _hourlyRate;
 
-        private DateTime birthDay;
-        private const int minimalHoursWorkedUnit = 1;
+        private DateTime _birthDay;
+        private const int _minimalHoursWorkedUnit = 1;
 
-        private Address address;
+        private Address _address;
 
         public static double taxRate = 0.15;
 
         public string FirstName
         {
-            get { return firstName; }
-            set
-            {
-                firstName = value;
-            }
+            get => _firstName;
+            set => _firstName = value;
         }
 
         public string LastName
         {
-            get { return lastName; }
-            set
-            {
-                lastName = value;
-            }
+            get => _lastName;
+            set => _lastName = value;
         }
 
         public string Email
         {
-            get { return email; }
-            set
-            {
-                email = value;
-            }
+            get => _email;
+            set => _email = value;
         }
 
         public int NumberOfHoursWorked
         {
-            get { return numberOfHoursWorked; }
-            protected set
-            {
-                numberOfHoursWorked = value;
-            }
+            get => _numberOfHoursWorked;
+            protected set => _numberOfHoursWorked = value;
         }
 
         public double Wage
         {
-            get { return wage; }
-            private set
-            {
-                wage = value;
-            }
+            get => _wage;
+            private set => _wage = value;
         }
 
         public double? HourlyRate
         {
-            get { return hourlyRate; }
+            get => _hourlyRate;
             set
             {
-                if (hourlyRate < 0)//this should always be higher than 0
+                if (_hourlyRate < 0)//this should always be higher than 0
                 {
-                    hourlyRate = 0;
+                    _hourlyRate = 0;
                 }
                 else
                 {
-                    hourlyRate = value;
+                    _hourlyRate = value;
 
                 }
             }
@@ -84,20 +69,14 @@ namespace BethanysPieShopHRM.HR
 
         public DateTime BirthDay
         {
-            get { return birthDay; }
-            set
-            {
-                birthDay = value;
-            }
+            get => _birthDay;
+            set => _birthDay = value;
         }
 
         public Address Address
         {
-            get { return address; }
-            set
-            {
-                address = value;
-            }
+            get => _address;
+            set => _address = value;
         }
 
 
@@ -129,7 +108,7 @@ namespace BethanysPieShopHRM.HR
 
         public void PerformWork()
         {
-            PerformWork(minimalHoursWorkedUnit);
+            PerformWork(_minimalHoursWorkedUnit);
         }
 
         public void PerformWork(int numberOfHours)

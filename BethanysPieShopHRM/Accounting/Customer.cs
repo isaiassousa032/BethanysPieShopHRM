@@ -8,24 +8,18 @@ namespace BethanysPieShopHRM.Accounting
 {
     internal class Customer
     {
-        private string customerId;
+        private string _customerId;
         private string name;
 
         public string CustomerId
         {
-            get { return customerId; }
-            set
-            {
-                customerId = value;
-            }
+            get => _customerId;
+            set => _customerId = value;
         }
         public string Name
         {
-            get { return name; }
-            set
-            {
-                name = value;
-            }
+            get => name;
+            set => name = value;
         }
 
     }

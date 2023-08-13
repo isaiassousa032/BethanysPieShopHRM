@@ -8,15 +8,12 @@ namespace BethanysPieShopHRM.HR
 {
     internal class Developer: Employee
     {
-        private string currentProject;
+        private string _currentProject;
 
         public string CurrentProject
         {
-            get { return currentProject; }
-            set
-            {
-                currentProject = value;
-            }
+            get => _currentProject;
+            set => _currentProject = value;
         }
 
         public Developer(string firstName, string lastName, string email, DateTime birthDay, double? hourlyRate) : base(firstName, lastName, email, birthDay, hourlyRate)
