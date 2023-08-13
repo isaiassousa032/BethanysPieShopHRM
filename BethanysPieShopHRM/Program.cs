@@ -1,91 +1,27 @@
 ﻿using BethanysPieShopHRM.HR;
-using BethanysPieShopHRM.Accounting;
 
-Console.WriteLine("Creating an Employee");
-Console.WriteLine("--------------------\n");
+IEmployee bethany = new StoreManager("Bethany", "Smith", "bethany@snowball.be", new DateTime(1979, 1, 16), 25);
+IEmployee mary = new Manager("Mary", "Jones", "mary@snowball.be", new DateTime(1965, 1, 16), 30);
+JuniorResearcher bobJunior = new JuniorResearcher("Bob", "Spencer", "bob@snowball.be", new DateTime(1988, 1, 23), 17);
+IEmployee kevin = new StoreManager("Kevin", "Marks", "kevin@snowball.be", new DateTime(1953, 12, 12), 10);
+IEmployee kate = new StoreManager("Kate", "Greggs", "kate@snowball.be", new DateTime(1993, 8, 8), 10);
 
-Employee bethany = new("Bethany", "Smith", "bethany@snowball.be", new DateTime(1979, 1, 16), 25, EmployeeType.Manager);
 
-Console.WriteLine("\nCreating an Employee");
-Console.WriteLine("--------------------\n");
+List<IEmployee> employees = new List<IEmployee>();
+employees.Add(bethany);
+employees.Add(mary);
+employees.Add(bobJunior);
+employees.Add(kevin);
+employees.Add(kate);
 
-Employee george = new("George", "Jones", "george@snowball.be", new DateTime(1984, 3, 28), null, EmployeeType.Research);
-
-//Employee mysteryEmployee = null;
-//mysteryEmployee.DisplayEmployeeDetails();
-
-#region First run Bethany
-
-bethany.PerformWork();
-bethany.PerformWork(5);
-bethany.PerformWork();
-bethany.ReceiveWage();
-bethany.DisplayEmployeeDetails();
-
-#endregion
-
-#region First run George
-
-george.PerformWork(10);
-george.PerformWork();
-george.PerformWork();
-george.ReceiveWage();
-george.DisplayEmployeeDetails();
-
-#endregion
-
-Employee.taxRate = 0.02;
-
-#region Second run Bethany
-
-bethany.PerformWork();
-bethany.PerformWork();
-bethany.PerformWork();
-bethany.PerformWork();
-bethany.PerformWork();
-bethany.PerformWork();
-bethany.ReceiveWage();
-bethany.DisplayEmployeeDetails();
-
-#endregion
-
-#region Second run George
-
-george.PerformWork();
-george.PerformWork();
-george.PerformWork();
-george.ReceiveWage();
-george.DisplayEmployeeDetails();
-
-#endregion
-
-Employee.DisplayTaxRate();
-
-bethany.CalculateWage();
-
-int[] sampleArray1 = new int[5];
-
-int[] sampleArray2 = new int[] { 1, 2, 3, 4, 5 };
-int[] sampleArray3 = new int[5] { 1, 2, 3, 4, 5 };
-
-Console.WriteLine("How many employees IDs do you want to register?");
-
-int length = int.Parse(Console.ReadLine());
-
-int[] employeeIds = new int[length];
-
-var testId = employeeIds[0];
-
-for (int i = 0; i < length; i++)
+foreach (var employee in employees)
 {
-    Console.Write("Enter the employee ID:");
-    int id = int.Parse(Console.ReadLine());
-    employeeIds[i] = id;
+    
+    employee.DisplayEmployeeDetails();
+    employee.GiveBonus();
+    employee.GiveCompliment();
+    employee.PerformWork();
+    employee.ReceiveWage();
 }
 
-for (int i = 0; i < employeeIds.Length; i++)
-{
-    Console.WriteLine($"ID {i + 1}: \t{employeeIds[i]}");
-}
-
-
+//Console.ReadLine();

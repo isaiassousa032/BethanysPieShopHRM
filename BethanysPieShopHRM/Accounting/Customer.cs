@@ -19,7 +19,6 @@ namespace BethanysPieShopHRM.Accounting
                 customerId = value;
             }
         }
-
         public string Name
         {
             get { return name; }
@@ -28,5 +27,6 @@ namespace BethanysPieShopHRM.Accounting
                 name = value;
             }
         }
+
     }
 }
